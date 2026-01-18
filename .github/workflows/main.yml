@@ -1,4 +1,4 @@
-name: Build C711 App
+name: Build C711 Maintenance App
 on: [push, pull_request]
 
 jobs:
@@ -9,8 +9,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        # Using a reliable, maintained action for Buildozer
-        uses: action-pack/buildozer@v1
+        # Using the currently maintained and verified action
+        uses: Kou-S/buildozer-action@v2
         with:
           command: buildozer android debug
           buildozer_version: master
