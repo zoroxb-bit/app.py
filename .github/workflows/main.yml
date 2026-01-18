@@ -1,4 +1,4 @@
-name: Build C711 App
+name: Build C711 Maintenance App
 on: [push, pull_request]
 
 jobs:
@@ -6,17 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Build with Buildozer
-        uses: ArtemSerebriakov/buildozer-action@v1
+        uses: Enteee/buildozer-action@v1.2.1
         with:
           command: buildozer android debug
           buildozer_version: master
 
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: C711_Installation_File
+          name: C711_App_Debug
           path: bin/*.apk
           
